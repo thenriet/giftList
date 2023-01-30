@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    display: flex;
+    gap:60px;
+}
+
+.card {
+    border-radius: 20px;
+    background-color: #E9CF6A;
+    width:250px;
+    height: 350px;
+}
+
+img {
+    width:200px;
+    height:143px;
+    margin: 25px;
+}
+
+h1,h2 {
+    text-align: center;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card p {
+    margin: 0 25px 25px 25px;
+    height: 65px;
+    overflow:auto;
+}
