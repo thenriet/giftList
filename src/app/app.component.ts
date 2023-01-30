@@ -9,10 +9,5 @@ import { OpenAiService } from './open-ai.service';
 })
 export class AppComponent {
   title = 'giftList';
-  text = 'idée de cadeau';
-
-  constructor(private service: OpenAiService) {
-    this.service.getDataFromOpenAI(this.text);
-  }
-
+  
 }
