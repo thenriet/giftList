@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { OpenAiService } from '../open-ai.service';
+
 
 @Component({
   selector: 'app-card',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
+
+  text = 'cadeau';
+
+  constructor(private service: OpenAiService) {
+    this.service.getDataFromOpenAI(this.text);
+  }
 
 }
