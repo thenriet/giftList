@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { OpenAiService } from './open-ai.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'giftList';
+  text = 'idée de cadeau';
+
+  constructor(private service: OpenAiService) {
+    this.service.getDataFromOpenAI(this.text);
+  }
+
 }
