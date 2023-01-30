@@ -21,7 +21,10 @@ export class OpenAiService {
     from(this.openai.createCompletion({
       model: "text-davinci-003",
       prompt: text,
-      max_tokens: 256
+      max_tokens: 2000,
+      temperature: 0.25,
+      stream: false,
+      stop: 'human'
     })).pipe(
       filter(resp => !!resp && !!resp.data),
       map(resp => resp.data),
