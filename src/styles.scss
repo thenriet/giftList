@@ -1,6 +1,12 @@
+main {
+    background-color: #F1F1F1;
+}
+
 .container {
     display: flex;
-    gap:60px;
+    gap:40px;
+    justify-content: center;
+
 }
 
 .card {
@@ -26,6 +32,6 @@ h1,h2 {
 
 .card p {
     margin: 0 25px 25px 25px;
-    height: 65px;
-    overflow:auto;
+    height: 45px;
+    text-overflow: ellipsis;
 }
