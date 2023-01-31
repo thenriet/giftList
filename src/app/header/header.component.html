@@ -1,0 +1,40 @@
+<div class="header">
+    <div class="header-elements">
+        <div class="logo">
+            <img src="https://s1.qwant.com/thumbr/0x380/1/1/307ef0d571960e88d0b7267ad40b59590df24ce88e153923d2b5b62d2d5133/Gift-PNG-File.png?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2016%2F03%2FGift-PNG-File.png&q=0&b=1&p=0&a=0" alt="">
+        </div>
+        <div class="form-fields">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <div class="form-inputs">
+                    <fieldset>
+                        <label for="firstname">Prénom</label>
+                        <input id="firstname" name="firstname" type="text" formControlName="firstname">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="lastname">Nom</label>
+                        <input id="lastname" name="lastname" type="text" formControlName="lastname">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="age">Age</label>
+                        <input id="age" name="age" type="number" formControlName="age">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="genre">Genre</label>
+                        <input id="genre" name="genre" type="text" formControlName="genre">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="interests">Loisirs</label>
+                        <input id="interests" name="interests" type="text" formControlName="interests">
+                    </fieldset>
+                </div>
+                <div class="submit-button">
+                        <button type="submit" [disabled]="!myForm.valid">Go !</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
