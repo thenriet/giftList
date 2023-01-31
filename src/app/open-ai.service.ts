@@ -22,7 +22,7 @@ export class OpenAiService {
       model: "text-davinci-003",
       prompt: text,
       max_tokens: 2000,
-      temperature: 0.25,
+      temperature: 0.75,
       stream: false,
       stop: 'human'
     })).pipe(

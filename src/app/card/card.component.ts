@@ -9,10 +9,7 @@ import { OpenAiService } from '../open-ai.service';
 })
 export class CardComponent {
 
-  text = '10 cadeaux avec description en format JSON';
-
   constructor(private service: OpenAiService) {
-    this.service.getDataFromOpenAI(this.text);
   }
 
 }
