@@ -12,4 +12,9 @@ export class CardComponent {
   constructor(private service: OpenAiService) {
   }
 
+  isReadMore = true
+
+  showText() {
+    this.isReadMore = !this.isReadMore
+  }
 }

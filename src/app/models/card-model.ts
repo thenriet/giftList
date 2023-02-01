@@ -1,7 +1,6 @@
 export class CardModel {
-    id!:number
-    photo!:String
-    nom!:String
-    description!:String
-    prix!:String
+    firstName!: string;
+    gender!: string;
+    age!: number;
+    interests!:string;
 }
