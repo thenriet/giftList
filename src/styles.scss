@@ -1,31 +1,15 @@
-.container {
-    display: flex;
-    gap:60px;
+body {
+    margin:0;
 }
 
-.card {
-    border-radius: 20px;
-    background-color: #E9CF6A;
-    width:250px;
-    height: 350px;
+h1 {
+    margin-bottom: 3%;
 }
 
-img {
-    width:200px;
-    height:143px;
-    margin: 25px;
+h2 {
+margin-bottom: 10px;
 }
 
 h1,h2 {
     text-align: center;
-}
-
-.card h2 {
-    margin-top: 0;
-}
-
-.card p {
-    margin: 0 25px 25px 25px;
-    height: 65px;
-    overflow:auto;
 }

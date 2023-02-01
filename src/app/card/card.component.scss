@@ -1,0 +1,42 @@
+.card {
+    border-radius: 20px;
+    background-color: #E9CF6A;
+    width:250px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card p {
+    margin: 0 25px 25px 25px;
+    font-size: 1.2rem;
+}
+
+img {
+    width:200px;
+    height:143px;
+    margin: 25px;
+    border-radius: 10px;
+}
+
+//Read more button
+
+.limitTextHeight {
+    height: 65px;
+    overflow: hidden;
+}
+
+.readMoreContainer {
+    width:250px;
+    display: flex;
+    justify-content: center;
+}
+
+#readMoreButton {
+    border:none;
+    background-color:inherit;
+    margin-top:10px;
+    margin-bottom:15px;
+    
+}
