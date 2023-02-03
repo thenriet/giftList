@@ -1,6 +1,6 @@
 export class CardModel {
-    firstName!: string;
-    gender!: string;
-    age!: number;
-    interests!:string;
+    title!: string;
+    description!: string;
+    image!: string;
+    budget!: number;
 }

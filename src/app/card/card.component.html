@@ -1,11 +1,15 @@
 <a>
   <div class="card">
     <div class="cardHeader">
-      <img src="../../assets/images/nintendo.png" alt="photo du cadeau" />
-      <h2>Nintendo</h2>
+      <div class="budget">25€</div>
+      <!-- <img src="{{card.image}}" alt="photo du cadeau" /> -->
+      <img src="../../assets/images/nintendo.png" alt="">
+      <!-- <h2>{{card.title}}</h2> -->
+      <h2>Titre</h2>
     </div>
     <div class="cardBody" [ngClass]="{'limitTextHeight': isReadMore}">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <!-- <p>{{card.description}}</p> -->
+      <p>description Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum ipsam dolores ipsa quam. Consectetur modi laudantium, error autem veniam quos quisquam ipsam ipsum laborum, iusto, distinctio tempore voluptas. Iusto, et?</p>
     </div>
     <div class="readMoreContainer">
       <button id="readMoreButton" type="button" (click)="showText()"> {{ isReadMore ? '>> Voir plus': '>> Voir moins' }}

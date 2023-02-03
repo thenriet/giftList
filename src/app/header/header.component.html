@@ -20,6 +20,11 @@
             <label for="interests">Loisirs : </label>
             <input id="interests" name="interests" type="text" formControlName="interests">
         </fieldset>
+
+        <fieldset>
+            <label for="budget">Budget : </label>
+            <input id="budget" name="budget" type="number" formControlName="budget">
+        </fieldset>
         <button type="submit" [disabled]="!myForm.valid">Go !</button>
     </form>
 </header>

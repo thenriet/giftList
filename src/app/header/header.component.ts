@@ -28,9 +28,7 @@ export class HeaderComponent {
     let gender = datas['genre'];
     let interests = datas['interests'];
     console.log(interests);
-    let query = `Donne moi une liste de 8 cadeaux pour une personne de ${age} ans, de sexe ${gender}, qui s'appelle ${firstname} et qui aime le ${interests}. J'ai besoin d'une description personnalisée avec le nom de la personne. Présente tout ça en un fichier JSON avec deux clés : name et description.`;
-
-    let query1 = `Donne moi une liste de 8 idées de cadeaux adaptée selon l'âge, le sexe et surtout les intérêts d'une personne. La liste doit être en format JSON et contenir uniquement deux clés : name et description. La description doit contenir le nom de la personne et doit faire au moins 50 caractères.Chaque description doit être différente. Cette personne a ${age} ans, est de sexe ${gender}, s'appelle ${firstname} et a comme intérêts ${interests}.`;
+    let query1 = `Donne-moi une liste de 4 cadeaux adaptés à cette personne: ${firstname}, ${gender} de ${age} ans aimant ${interests} en format json contenant deux clés : name (en 3 mots max en français) et description (de 50 caractères avec le nom de la personne).`;
 
     this.service.getDataFromOpenAI(query1);
   };
