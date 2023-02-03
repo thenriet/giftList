@@ -32,7 +32,7 @@ export class HeaderComponent {
     let interests = datas['interests'];
     let budget = datas['budget'];
     if (budget !== ""){
-      let query2 = `Donne-moi une liste en format json (contenant deux clés : name et description) de 4 cadeaux adaptés à cette personne: ${firstname}, ${gender} de ${age} ans aimant ${interests}. les cadeaux doivent avoir un prix maximum de ${budget}. La description de 50 caractères minimum contient le nom de la personne.`;
+      let query2 = `Donne-moi une liste en format json (contenant trois clés : name, description et budget) de 4 cadeaux adaptés à cette personne: ${firstname}, ${gender} de ${age} ans aimant ${interests}. les cadeaux doivent avoir un prix maximum de ${budget}. La description de 50 caractères minimum contient le nom de la personne.`;
       this.service.getDataFromOpenAI(query2);
     } else {
       let query2 = `Donne-moi une liste en format json (contenant deux clés : name et description) de 4 cadeaux adaptés à cette personne: ${firstname}, ${gender} de ${age} ans aimant ${interests}. La description de 50 caractères minimum contient le nom de la personne.`;
