@@ -34,17 +34,16 @@ export class OpenAiService {
       map(data => data.choices[0].text)
     ).subscribe(async data => {
         const json = JSON.parse(data);
-        let cards = [];
         for (let i = 0; i < json.length; i++) {
           let responseImage = await this.openai.createImage({
             prompt: json[i].description,
             n: 1,
-            size: "512x512",
+            size: "256x256",
           });
-          let image_url = responseImage.data.data[0].url;
           this.card = new CardModel();
-          this.card.name = json[i].name;
+          this.card.title = json[i].name;
           this.card.description = json[i].description;
+          let image_url = responseImage.data.data[0].url;
           this.card.image = `${image_url}`;
           this.createCards(this.card);
         }
@@ -52,9 +51,7 @@ export class OpenAiService {
   }
 
   createCards(card : CardModel){
-    console.log(card);
     this.cards.push(card);
-    console.log(this.cards);
     return this.cards;
   }
 

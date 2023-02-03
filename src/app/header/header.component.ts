@@ -30,10 +30,13 @@ export class HeaderComponent {
     let age = datas['age'];
     let gender = datas['genre'];
     let interests = datas['interests'];
-    let query = `Donne moi une liste de 8 cadeaux pour une personne de ${age} ans, de sexe ${gender}, qui s'appelle ${firstname} et qui aime le ${interests}. J'ai besoin d'une description personnalisée avec le nom de la personne. Présente tout ça en un fichier JSON avec deux clés : name et description.`;
-
-    let query1 = `Donne moi une liste de 8 idées de cadeaux adaptée selon l'âge, le sexe et surtout les intérêts d'une personne. La liste doit être en format JSON et contenir uniquement deux clés : name et description. La description doit contenir le nom de la personne et doit faire au moins 50 caractères.Chaque description doit être différente. Cette personne a ${age} ans, est de sexe ${gender}, s'appelle ${firstname} et a comme intérêts ${interests}.`;
-
-    this.service.getDataFromOpenAI(query1);
+    let budget = datas['budget'];
+    if (budget !== ""){
+      let query2 = `Donne-moi une liste en format json (contenant deux clés : name et description) de 4 cadeaux adaptés à cette personne: ${firstname}, ${gender} de ${age} ans aimant ${interests}. les cadeaux doivent avoir un prix maximum de ${budget}. La description de 50 caractères minimum contient le nom de la personne.`;
+      this.service.getDataFromOpenAI(query2);
+    } else {
+      let query2 = `Donne-moi une liste en format json (contenant deux clés : name et description) de 4 cadeaux adaptés à cette personne: ${firstname}, ${gender} de ${age} ans aimant ${interests}. La description de 50 caractères minimum contient le nom de la personne.`;
+      this.service.getDataFromOpenAI(query2);
+    }
   };
 }
