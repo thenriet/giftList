@@ -48,11 +48,11 @@ export class OpenAiService {
           this.card.id = this.cardsInDB.length+1;
           this.card.title = json[i].name;
           this.card.description = json[i].description;
+          this.card.isVisible = true;
           let image_url = responseImage.data.data[0].url;
           this.card.image = `${image_url}`;
           this.card.budget = json[i].budget;
           this.createCards(this.card);
-          console.log(this.card);
           this.refreshCards();
         }
     });

@@ -1,6 +1,30 @@
-.container {
+.container, .history-container, .div {
     display: flex;
     gap: 60px;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: #c30209;
+    font-size: 1.2rem;
+    color:rgb(255, 255, 255);
+    height:70px;
+    width: 140px;
+    margin:20px;
+    border-radius:10px;
+    border:none;
+}
+
+label, input {
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+

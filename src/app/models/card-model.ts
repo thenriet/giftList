@@ -4,4 +4,5 @@ export class CardModel {
     description!: string;
     image!: string;
     budget!: number;
+    isVisible!: boolean;
 }

@@ -14,7 +14,6 @@ export class ApiService {
   }
  
   getCards(): Observable<CardModel[]> {
-    console.log('getCards '+this.baseURL + 'cards')
     return this.http.get<CardModel[]>(this.baseURL + 'cards')
   }
  
