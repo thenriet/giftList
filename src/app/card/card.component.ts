@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CardModel } from '../models/card-model';
-import { OpenAiService } from '../open-ai.service';
+import { OpenAiService } from '../services/open-ai.service';
 
 
 @Component({
@@ -11,6 +11,8 @@ import { OpenAiService } from '../open-ai.service';
 export class CardComponent {
 
   @Input('inputCard') card!: CardModel;
+  @Input('inputCard$') cards$!: CardModel;
+
 
   constructor(private service: OpenAiService) {
   }

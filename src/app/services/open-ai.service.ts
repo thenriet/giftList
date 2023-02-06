@@ -1,8 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Configuration, OpenAIApi } from 'openai';
 import { filter, from, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CardModel } from './models/card-model';
+import { CardModel } from '../models/card-model';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +18,11 @@ export class OpenAiService {
   readonly openai = new OpenAIApi(this.configuration);
   card !: CardModel;
   cards : CardModel[] = [];
+  cardsInDB !: CardModel[];
 
-  constructor() { }
+  constructor(private http: HttpClient, private ApiService: ApiService) { 
+    this.refreshCards();
+  }
 
   async getDataFromOpenAI(text: string) {
     from(this.openai.createCompletion({
@@ -41,19 +46,29 @@ export class OpenAiService {
             size: "256x256",
           });
           this.card = new CardModel();
+          this.card.id = this.cardsInDB.length+1;
           this.card.title = json[i].name;
           this.card.description = json[i].description;
           let image_url = responseImage.data.data[0].url;
           this.card.image = `${image_url}`;
           this.createCards(this.card);
+          this.refreshCards();
         }
     });
   }
 
-  createCards(card : CardModel){
-    this.cards.push(card);
-    return this.cards;
+  refreshCards() {
+    this.ApiService.getCards()
+       .subscribe(data => {
+         this.cardsInDB=data;
+        })   
   }
 
-
+  createCards(card : CardModel){
+    this.cards.push(card);
+    this.ApiService.addCard(card)
+    .subscribe(data => {
+      this.card=data;
+    })    
+  }
 }

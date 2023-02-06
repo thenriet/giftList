@@ -1,6 +1,7 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CardModel } from '../models/card-model';
-import { OpenAiService } from '../open-ai.service';
+import { ApiService } from '../services/api.service';
+import { OpenAiService } from '../services/open-ai.service';
 
 @Component({
   selector: 'app-card-list',
@@ -8,11 +9,10 @@ import { OpenAiService } from '../open-ai.service';
   styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent {
-  cards !: CardModel[]
+  cards !: CardModel[];
+  cards$ !: CardModel[];
   
-  constructor(private service: OpenAiService) {
-    this.cards = this.service.cards
-  }  
-
-
+  constructor(private openAiService: OpenAiService) {
+    this.cards = this.openAiService.cards;
+  } 
 }

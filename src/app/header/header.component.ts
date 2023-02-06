@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OpenAiService } from '../open-ai.service';
+import { OpenAiService } from '../services/open-ai.service';
 import { FormControl, FormGroup, FormBuilder, Validators, PatternValidator } from '@angular/forms';
 import { CardModel } from '../models/card-model';
 

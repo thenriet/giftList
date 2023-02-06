@@ -4,7 +4,8 @@ import { CardComponent } from './card/card.component';
 import { CardListComponent } from './card-list/card-list.component';
 
 const routes: Routes = [
-  { path: '', component: CardListComponent }
+  { path: '', component: CardListComponent }, 
+  { path: 'data', component: CardListComponent }
 ];
 
 @NgModule({
