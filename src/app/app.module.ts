@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +16,13 @@ import { HistoryComponent } from './history/history.component';
     CardListComponent,
     HeaderComponent,
     FooterComponent,
-    HistoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
