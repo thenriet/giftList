@@ -1,11 +1,15 @@
 .card {
     border-radius: 20px;
     background-color: #E9CF6A;
+    min-height: 197px;
     width:250px;
+    position:relative;
 }
 
 .card h2 {
-    margin-top: 0;
+    padding-top: 0.5rem;
+    font-size: 1.8rem;
+    min-height: 45px;
 }
 
 .card p {
@@ -13,17 +17,31 @@
     font-size: 1.2rem;
 }
 
+.budget {
+    width:70px;
+    height: 70px;
+    background-color:  #d70209;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2.7em;
+    font-size: 1.5em;
+    position:absolute;
+    top:5px;
+    right:5px;
+    color:white;
+}
+
 img {
     width:200px;
     height:143px;
-    margin: 25px;
+    margin: 25px 25px 0 25px;
     border-radius: 10px;
 }
 
 //Read more button
 
 .limitTextHeight {
-    height: 65px;
+    height: 49px;
     overflow: hidden;
 }
 
@@ -38,5 +56,6 @@ img {
     background-color:inherit;
     margin-top:10px;
     margin-bottom:15px;
+    font-size: 1.2rem;
     
 }

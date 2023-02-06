@@ -1,11 +1,15 @@
 <a>
   <div class="card">
     <div class="cardHeader">
-      <img src="../../assets/images/nintendo.png" alt="photo du cadeau" />
-      <h2>Nintendo</h2>
+      <div class="budget">{{card.budget}}€</div>
+    <div class="cardImage" *ngIf="getRoute().url === '/'">
+      <img [src]="card.image" alt="photo du cadeau"/>
+    
+    </div>
+      <h2>{{card.title}}</h2>
     </div>
     <div class="cardBody" [ngClass]="{'limitTextHeight': isReadMore}">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <p> {{card.description}} </p>
     </div>
     <div class="readMoreContainer">
       <button id="readMoreButton" type="button" (click)="showText()"> {{ isReadMore ? '>> Voir plus': '>> Voir moins' }}

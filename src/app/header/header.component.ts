@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { OpenAiService } from '../open-ai.service';
+import { OpenAiService } from '../services/open-ai.service';
 import { FormControl, FormGroup, FormBuilder, Validators, PatternValidator } from '@angular/forms';
+import { CardModel } from '../models/card-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +11,17 @@ import { FormControl, FormGroup, FormBuilder, Validators, PatternValidator } fro
 })
 export class HeaderComponent {
   myForm !: FormGroup;
+  card !: CardModel;
 
-  constructor(private fb: FormBuilder, private service: OpenAiService) { }
+
+  constructor(private fb: FormBuilder, private service: OpenAiService, private route : Router) { }
   ngOnInit(): void {
     this.myForm = this.fb.group({
       firstname: ['Thomas', [Validators.required],  ],
       age: ['4'],
       gender: ['masculin'],
       interests: ['batman, dinosaures et la neige', [Validators.required] ],
+      budget: ['']
     });
   }
 
@@ -27,11 +32,18 @@ export class HeaderComponent {
     let age = datas['age'];
     let gender = datas['genre'];
     let interests = datas['interests'];
-    console.log(interests);
-    let query = `Donne moi une liste de 8 cadeaux pour une personne de ${age} ans, de sexe ${gender}, qui s'appelle ${firstname} et qui aime le ${interests}. J'ai besoin d'une description personnalisée avec le nom de la personne. Présente tout ça en un fichier JSON avec deux clés : name et description.`;
-
-    let query1 = `Donne moi une liste de 8 idées de cadeaux adaptée selon l'âge, le sexe et surtout les intérêts d'une personne. La liste doit être en format JSON et contenir uniquement deux clés : name et description. La description doit contenir le nom de la personne et doit faire au moins 50 caractères.Chaque description doit être différente. Cette personne a ${age} ans, est de sexe ${gender}, s'appelle ${firstname} et a comme intérêts ${interests}.`;
-
-    this.service.getDataFromOpenAI(query1);
+    let budget = null;
+    if (datas['budget'] !== ''){
+      budget = datas['budget'];
+      let query2 = `Trouve-moi sur Amazon 4 cadeaux avec un budget proche de ${budget} euros adaptés à cette personne: ${firstname}, ${gender} de ${age} ans aimant ${interests}. Ne propose pas de cadeaux dangereux pour les enfants. La description de 50 caractères minimum contient le nom de la personne. Donne-moi cette liste en format json (contenant les clés : name, description et budget). N'affiche pas le budget dans la description.`;
+      this.service.getDataFromOpenAI(query2);
+    } else {
+      let query2 = `Trouve-moi sur Amazon 4 cadeaux adaptés à cette personne: ${firstname}, ${gender} de ${age} ans aimant ${interests}. Ne propose pas de cadeaux dangereux pour les enfants. La description de 50 caractères minimum contient le nom de la personne. Donne-moi cette liste en format json (contenant les clés : name, description et budget). Le budget doit être en euros.`;
+      this.service.getDataFromOpenAI(query2);
+    }
   };
+
+  getRoute(){
+    return this.route;
+  }
 }

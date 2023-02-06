@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { OpenAiService } from './open-ai.service';
+import { OpenAiService } from './services/open-ai.service';
 
 @Component({
   selector: 'app-root',
