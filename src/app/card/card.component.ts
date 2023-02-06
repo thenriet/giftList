@@ -20,4 +20,5 @@ export class CardComponent {
   showText() {
     this.isReadMore = !this.isReadMore
   }
+
 }

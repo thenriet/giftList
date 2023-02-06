@@ -45,6 +45,7 @@ export class OpenAiService {
           this.card.description = json[i].description;
           let image_url = responseImage.data.data[0].url;
           this.card.image = `${image_url}`;
+          this.card.budget = json[i].budget;
           this.createCards(this.card);
         }
     });
@@ -52,6 +53,7 @@ export class OpenAiService {
 
   createCards(card : CardModel){
     this.cards.push(card);
+    console.log(card);
     return this.cards;
   }
 

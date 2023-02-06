@@ -15,14 +15,14 @@ import { HttpClientModule } from '@angular/common/http';
     CardComponent,
     CardListComponent,
     HeaderComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

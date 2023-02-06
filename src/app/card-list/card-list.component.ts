@@ -14,5 +14,4 @@ export class CardListComponent {
     this.cards = this.service.cards
   }  
 
-
 }
