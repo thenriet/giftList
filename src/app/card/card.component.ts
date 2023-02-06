@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Pipe, PipeTransform } from '@angular/core';
 import { CardModel } from '../models/card-model';
 import { OpenAiService } from '../services/open-ai.service';
 
@@ -8,6 +8,7 @@ import { OpenAiService } from '../services/open-ai.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
+
 export class CardComponent {
 
   @Input('inputCard') card!: CardModel;
@@ -20,4 +21,5 @@ export class CardComponent {
   showText() {
     this.isReadMore = !this.isReadMore
   }
+
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OpenAiService } from '../services/open-ai.service';
-import { FormControl, FormGroup, FormBuilder, Validators, PatternValidator } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CardModel } from '../models/card-model';
 import { Router } from '@angular/router';
 
