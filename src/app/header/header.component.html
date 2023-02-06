@@ -1,6 +1,7 @@
 <header>
     <img class="logo" src="../../assets/images/logo.png" alt="">
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="formIsOn" *ngIf="getRoute().url === '/'">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
         <fieldset>
             <label for="firstname">Prénom : </label>
             <input id="firstname" name="firstname" type="text" formControlName="firstname">
@@ -22,4 +23,6 @@
         </fieldset>
         <button type="submit" [disabled]="!myForm.valid">Go !</button>
     </form>
+    </div>
+
 </header>
