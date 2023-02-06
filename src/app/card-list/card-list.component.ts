@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { CardModel } from '../models/card-model';
 import { ApiService } from '../services/api.service';
 import { OpenAiService } from '../services/open-ai.service';
@@ -10,9 +11,16 @@ import { OpenAiService } from '../services/open-ai.service';
 })
 export class CardListComponent {
   cards !: CardModel[];
-  cards$ !: CardModel[];
   
-  constructor(private openAiService: OpenAiService) {
-    this.cards = this.openAiService.cards;
-  } 
+  constructor(private openAiService: OpenAiService, private ApiService: ApiService, private route: Router) {
+    if (this.route.url === "/"){
+      this.cards = this.openAiService.cards;
+    } else if (this.route.url === "/history"){
+      this.ApiService.getCards()
+      .subscribe(data => {
+        this.cards=data;
+       })   
+     }
+  }
 }
+

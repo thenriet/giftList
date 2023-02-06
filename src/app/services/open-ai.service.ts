@@ -20,8 +20,10 @@ export class OpenAiService {
   cards : CardModel[] = [];
   cardsInDB !: CardModel[];
 
-  constructor(private http: HttpClient, private ApiService: ApiService) { 
+  constructor(private ApiService: ApiService) { 
+    console.log("test")
     this.refreshCards();
+    console.log(this.cardsInDB);
   }
 
   async getDataFromOpenAI(text: string) {

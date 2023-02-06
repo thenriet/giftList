@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     CardListComponent,
     HeaderComponent,
     FooterComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,

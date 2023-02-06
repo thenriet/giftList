@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { CardModel } from '../models/card-model';
 import { OpenAiService } from '../services/open-ai.service';
 
@@ -14,12 +15,17 @@ export class CardComponent {
   @Input('inputCard$') cards$!: CardModel;
 
 
-  constructor(private service: OpenAiService) {
+
+  constructor(private service: OpenAiService, private route : Router) {
   }
 
   isReadMore = true
 
   showText() {
     this.isReadMore = !this.isReadMore
+  }
+
+  getRoute(){
+    return this.route;
   }
 }
