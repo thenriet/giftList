@@ -2,15 +2,13 @@ import { Component, Input } from '@angular/core';
 import { CardModel } from '../models/card-model';
 import { OpenAiService } from '../services/open-ai.service';
 
-
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  selector: 'app-small-card',
+  templateUrl: './small-card.component.html',
+  styleUrls: ['./small-card.component.scss']
 })
-export class CardComponent {
-
-  @Input('inputCard') card!: CardModel;
+export class SmallCardComponent {
+  @Input('inputSmallCard') smallCard!: CardModel;
 
   constructor(private service: OpenAiService) {
   }

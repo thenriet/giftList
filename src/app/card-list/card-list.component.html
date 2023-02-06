@@ -1,4 +1,9 @@
 <h1>Ma Liste de cadeaux</h1>
-<div class="container">
+<div class="container" *ngIf="getRoute().url === '/'; else elseBlock">
 	<app-card *ngFor="let card of cards" [inputCard]="card"></app-card>
 </div>
+<ng-template #elseBlock> 
+	<div class="container">
+		<app-small-card *ngFor="let smallCard of cards" [inputSmallCard]="smallCard"></app-small-card> 
+	</div>
+</ng-template>

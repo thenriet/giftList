@@ -22,5 +22,9 @@ export class CardListComponent {
        })   
      }
   }
+
+  getRoute() {
+    return this.route;
+  }
 }
 
