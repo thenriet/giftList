@@ -1,0 +1,19 @@
+<a>
+  <div class="card">
+    <div class="cardHeader">
+      <div class="budget">{{card.budget}}€</div>
+    <div class="cardImage" *ngIf="getRoute().url === '/'">
+      <img [src]="card.image" alt="photo du cadeau"/>
+    
+    </div>
+      <h2>{{card.title}}</h2>
+    </div>
+    <div class="cardBody" [ngClass]="{'limitTextHeight': isReadMore}">
+      <p> {{card.description}} </p>
+    </div>
+    <div class="readMoreContainer">
+      <button id="readMoreButton" type="button" (click)="showText()"> {{ isReadMore ? '>> Voir plus': '>> Voir moins' }}
+      </button>
+    </div>
+  </div>
+</a>

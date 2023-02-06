@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+    margin:0;
+    background-image: url(assets/images/silverWallpaper.jpg);
+    background-size: cover;
+}
+
+h1 {
+    margin-bottom: 3%;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+h1,h2,p,label,input {
+    font-family: 'Dancing Script', cursive;
+}
+
+h1,h2 {
+    text-align: center;
+}
+
+#readMoreButton {
+    font-family: 'Dancing Script', cursive;
+}

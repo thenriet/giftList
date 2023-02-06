@@ -1,0 +1,65 @@
+header {
+    background-color: #c30209;
+    display: flex;
+    align-items: center;
+    padding:1% 5%;
+    margin-bottom: 3%;
+    min-height: 198.98px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 4rem;
+}
+
+.logo {
+    width:140px;
+    height: 140px;
+    margin-right:2%;
+    }
+
+fieldset {
+    border:none;
+}
+
+label {
+font-size: 2rem;
+color: #F5F5F5;
+}
+
+input {
+    height:40px;
+    width: 230px;
+    font-size: 1.5rem;
+    color:rgb(46, 46, 46);
+    border-radius: 10px;
+    border:none;
+}
+
+#interests {
+    width:600px;
+}
+
+#age, #budget {
+    width:50px;
+}
+
+button {
+    background-color: #C8C8C8;
+    font-size: 1.5rem;
+    color:rgb(255, 255, 255);
+    height:40px;
+    width:150px;
+    margin:20px;
+    border-radius:10px;
+    border:none;
+}
+
+#history-title {
+    color: white;
+    width: 100%;
+    margin-right:140px;
+    text-align: center;
+}
