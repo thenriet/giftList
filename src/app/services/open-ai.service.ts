@@ -53,7 +53,6 @@ export class OpenAiService {
           this.card.image = `${image_url}`;
           this.card.budget = json[i].budget;
           this.createCards(this.card);
-          console.log(this.card);
           this.refreshCards();
         }
     });

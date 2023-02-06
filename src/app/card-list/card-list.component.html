@@ -1,5 +1,6 @@
 <h1>Ma Liste de cadeaux</h1>
 <div class="container" *ngIf="getRoute().url === '/'; else elseBlock">
+	<div class="form-and-buttons">
 	<form [formGroup]="myForm" (ngSubmit)="filterByBudget(cards)" action="">
 		<label for="min">Minimum : </label>
 		<input id="min" name="min" type="text" formControlName="min">
@@ -11,6 +12,8 @@
 		<button (click)="reset()">Supprimer le filtre</button>
 		<button (click)="sortByAscPrice()">Classer par prix ascendant</button>
 		<button (click)="sortByDescPrice()">Classer par prix descendant</button>
+	</div>
+	
 	</div>
 	<div class="div" *ngIf="filteredCards.length !== 0; else elseBlock2">
 		<app-card *ngFor="let card of filteredCards" [inputCard]="card"></app-card>

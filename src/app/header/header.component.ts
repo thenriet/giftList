@@ -13,7 +13,6 @@ export class HeaderComponent {
   myForm !: FormGroup;
   card !: CardModel;
 
-
   constructor(private fb: FormBuilder, private service: OpenAiService, private route : Router) { }
   ngOnInit(): void {
     this.myForm = this.fb.group({

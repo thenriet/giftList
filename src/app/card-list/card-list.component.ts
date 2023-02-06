@@ -29,7 +29,7 @@ export class CardListComponent implements OnInit {
   ngOnInit(): void {
     this.myForm = this.fb.group({
       min: ['0' ],
-      max: ['4'],
+      max: ['100'],
     });
   }
 
