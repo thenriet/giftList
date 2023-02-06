@@ -1,6 +1,6 @@
 <header>
     <img class="logo" src="../../assets/images/logo.png" alt="">
-    <div class="formIsOn" *ngIf="getRoute().url === '/'">
+    <div class="formIsOn" *ngIf="getRoute().url === '/'; else elseBlock">
             <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
         <fieldset>
             <label for="firstname">Prénom : </label>
@@ -24,5 +24,7 @@
         <button type="submit" [disabled]="!myForm.valid">Go !</button>
     </form>
     </div>
+        <ng-template #elseBlock class="header-history"> <h1 id="history-title">Historique des recherches</h1> </ng-template>
+
 
 </header>

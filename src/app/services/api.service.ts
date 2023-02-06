@@ -7,8 +7,10 @@ import { Observable } from 'rxjs';
 export class ApiService {
  
   baseURL: string = "http://localhost:3000/";
+  cardsInDB !: CardModel[];
  
   constructor(private http: HttpClient) {
+    
   }
  
   getCards(): Observable<CardModel[]> {

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Configuration, OpenAIApi } from 'openai';
 import { filter, from, map } from 'rxjs';
@@ -21,9 +20,7 @@ export class OpenAiService {
   cardsInDB !: CardModel[];
 
   constructor(private ApiService: ApiService) { 
-    console.log("test")
     this.refreshCards();
-    console.log(this.cardsInDB);
   }
 
   async getDataFromOpenAI(text: string) {

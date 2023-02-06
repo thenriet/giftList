@@ -1,29 +1,32 @@
 .card {
     border-radius: 20px;
     background-color: #E9CF6A;
+    min-height: 197px;
     width:250px;
 }
 
 .card h2 {
-    margin-top: 0;
+    padding-top: 0.5rem;
+    font-size: 1.8rem;
+    min-height: 77px;
 }
 
 .card p {
-    margin: 0 25px 25px 25px;
-    font-size: 1.2rem;
+    margin: 0 0 25px 25px;
+    font-size: 1.5rem;
 }
 
 img {
     width:200px;
     height:143px;
-    margin: 25px;
+    margin: 25px 25px 0 25px;
     border-radius: 10px;
 }
 
 //Read more button
 
 .limitTextHeight {
-    height: 65px;
+    height: 60px;
     overflow: hidden;
 }
 
@@ -38,5 +41,6 @@ img {
     background-color:inherit;
     margin-top:10px;
     margin-bottom:15px;
+    font-size: 1.2rem;
     
 }

@@ -25,7 +25,7 @@ export class CardComponent {
     this.isReadMore = !this.isReadMore
   }
 
-  getRoute(){
+  getRoute() {
     return this.route;
   }
 }
