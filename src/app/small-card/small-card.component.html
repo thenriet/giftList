@@ -1,6 +1,6 @@
 <div class="card">
   <div class="cardHeader">
-    <div class="budget" *ngIf="smallCard.budget">{{smallCard.budget}}€</div>
+    <div class="budget" *ngIf="smallCard.budget">{{smallCard.budget}}</div>
     <h2>{{smallCard.title}}</h2>
   </div>
   <div class="cardBody" [ngClass]="{'limitTextHeight': isReadMore}">

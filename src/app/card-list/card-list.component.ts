@@ -10,10 +10,11 @@ import { OpenAiService } from '../services/open-ai.service';
   templateUrl: './card-list.component.html',
   styleUrls: ['./card-list.component.scss']
 })
-export class CardListComponent implements OnInit {
-  cards !: CardModel[];
+export class CardListComponent {
+  cards !: CardModel[]
   filteredCards : CardModel[] = [];
   myForm !: FormGroup;
+  _loaderShow = false;
   
   constructor(private openAiService: OpenAiService, private ApiService: ApiService, private route: Router, private fb: FormBuilder) {
     if (this.route.url === "/"){
