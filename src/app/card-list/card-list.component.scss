@@ -6,6 +6,19 @@
     align-items: center;
 }
 
+.form-and-buttons{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.form-and-buttons>form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .buttons {
     display: flex;
     justify-content: center;

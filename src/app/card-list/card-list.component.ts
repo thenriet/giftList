@@ -14,7 +14,7 @@ export class CardListComponent {
   cards !: CardModel[]
   filteredCards : CardModel[] = [];
   myForm !: FormGroup;
-  _loaderShow = true;
+  _loaderShow = false;
   
   constructor(private openAiService: OpenAiService, private ApiService: ApiService, private route: Router, private fb: FormBuilder) {
     if (this.route.url === "/"){
