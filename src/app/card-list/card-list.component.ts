@@ -9,9 +9,14 @@ import { OpenAiService } from '../open-ai.service';
 })
 export class CardListComponent {
   cards !: CardModel[]
+  _loaderShow = true;
   
   constructor(private service: OpenAiService) {
-    this.cards = this.service.cards
+    this.cards = this.service.cards   
   }  
+
+  ngOnInit() {
+  
+  }
 
 }

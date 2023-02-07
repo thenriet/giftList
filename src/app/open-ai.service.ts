@@ -3,6 +3,7 @@ import { Configuration, OpenAIApi } from 'openai';
 import { filter, from, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CardModel } from './models/card-model';
+import { CardListComponent } from './card-list/card-list.component';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,8 @@ export class OpenAiService {
       filter((data: any) => data.choices && data.choices.length > 0 && data.choices[0].text),
       map(data => data.choices[0].text)
     ).subscribe(async data => {
+
+
         const json = JSON.parse(data);
         for (let i = 0; i < json.length; i++) {
           let responseImage = await this.openai.createImage({
@@ -47,9 +50,11 @@ export class OpenAiService {
           this.card.image = `${image_url}`;
           this.card.budget = json[i].budget;
           this.createCards(this.card);
+          
         }
     });
   }
+
 
   createCards(card : CardModel){
     this.cards.push(card);

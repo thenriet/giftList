@@ -1,4 +1,15 @@
 <h1>Ma Liste de cadeaux</h1>
-<div class="container">
 	<app-card *ngFor="let card of cards" [inputCard]="card"></app-card>
-</div>
+
+	<div id="loader" *ngIf="_loaderShow">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="loading"></div>
+    </div>
+
