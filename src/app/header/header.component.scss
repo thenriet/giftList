@@ -4,6 +4,7 @@ header {
     align-items: center;
     padding:1% 5%;
     margin-bottom: 3%;
+    min-height: 198.98px;
 }
 
 form {
@@ -54,4 +55,11 @@ button {
     margin:20px;
     border-radius:10px;
     border:none;
+}
+
+#history-title {
+    color: white;
+    width: 100%;
+    margin-right:140px;
+    text-align: center;
 }

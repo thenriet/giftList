@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { OpenAiService } from '../open-ai.service';
-import { FormControl, FormGroup, FormBuilder, Validators, PatternValidator } from '@angular/forms';
+import { OpenAiService } from '../services/open-ai.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CardModel } from '../models/card-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +13,7 @@ export class HeaderComponent {
   myForm !: FormGroup;
   card !: CardModel;
 
-
-  constructor(private fb: FormBuilder, private service: OpenAiService) { }
+  constructor(private fb: FormBuilder, private service: OpenAiService, private route : Router) { }
   ngOnInit(): void {
     this.myForm = this.fb.group({
       firstname: ['Thomas', [Validators.required],  ],
@@ -41,4 +41,8 @@ export class HeaderComponent {
       this.service.getDataFromOpenAI(query2);
     }
   };
+
+  getRoute(){
+    return this.route;
+  }
 }

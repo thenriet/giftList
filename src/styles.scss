@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 body {
     margin:0;
     background-image: url(assets/images/silverWallpaper.jpg);
@@ -9,7 +11,11 @@ h1 {
 }
 
 h2 {
-margin-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+h1,h2,p,label,input, button, footer {
+    font-family: 'Dancing Script', cursive;
 }
 
 h1,h2 {

@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SmallCardComponent } from './small-card/small-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     CardComponent,
     CardListComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SmallCardComponent,
   ],
   imports: [
     BrowserModule,

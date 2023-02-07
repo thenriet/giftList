@@ -1,15 +1,29 @@
 <h1>Ma Liste de cadeaux</h1>
-	<app-card *ngFor="let card of cards" [inputCard]="card"></app-card>
-
-	<div id="loader" *ngIf="_loaderShow">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="loading"></div>
-    </div>
-
+<div class="container" *ngIf="getRoute().url === '/'; else elseBlock">
+	<div class="form-and-buttons">
+	<form [formGroup]="myForm" (ngSubmit)="filterByBudget(cards)" action="">
+		<label for="min">Minimum : </label>
+		<input id="min" name="min" type="text" formControlName="min">
+		<label for="max">Maximum : </label>
+		<input id="max" name="max" type="text" formControlName="max">	
+		<button type="submit">Flitrer</button>
+	</form>
+	<div class="buttons">
+		<button (click)="reset()">Supprimer le filtre</button>
+		<button (click)="sortByAscPrice()">Classer par prix ascendant</button>
+		<button (click)="sortByDescPrice()">Classer par prix descendant</button>
+	</div>
+	
+	</div>
+	<div class="div" *ngIf="filteredCards.length !== 0; else elseBlock2">
+		<app-card *ngFor="let card of filteredCards" [inputCard]="card"></app-card>
+	</div>
+	<ng-template #elseBlock2>
+			<app-card *ngFor="let card of cards" [inputCard]="card"></app-card>
+	</ng-template>
+</div>
+<ng-template #elseBlock> 
+	<div class="container">
+		<app-small-card *ngFor="let smallCard of cards" [inputSmallCard]="smallCard"></app-small-card> 
+	</div>
+</ng-template>

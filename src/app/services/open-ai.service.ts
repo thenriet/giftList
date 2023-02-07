@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Configuration, OpenAIApi } from 'openai';
 import { filter, from, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CardModel } from './models/card-model';
-import { CardListComponent } from './card-list/card-list.component';
+import { CardModel } from '../models/card-model';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +17,11 @@ export class OpenAiService {
   readonly openai = new OpenAIApi(this.configuration);
   card !: CardModel;
   cards : CardModel[] = [];
+  cardsInDB !: CardModel[];
 
-  constructor() { }
+  constructor(private ApiService: ApiService) { 
+    this.refreshCards();
+  }
 
   async getDataFromOpenAI(text: string) {
     from(this.openai.createCompletion({
@@ -34,8 +37,6 @@ export class OpenAiService {
       filter((data: any) => data.choices && data.choices.length > 0 && data.choices[0].text),
       map(data => data.choices[0].text)
     ).subscribe(async data => {
-
-
         const json = JSON.parse(data);
         for (let i = 0; i < json.length; i++) {
           let responseImage = await this.openai.createImage({
@@ -44,23 +45,31 @@ export class OpenAiService {
             size: "256x256",
           });
           this.card = new CardModel();
+          this.card.id = this.cardsInDB.length+1;
           this.card.title = json[i].name;
           this.card.description = json[i].description;
+          this.card.isVisible = true;
           let image_url = responseImage.data.data[0].url;
           this.card.image = `${image_url}`;
           this.card.budget = json[i].budget;
           this.createCards(this.card);
-          
+          this.refreshCards();
         }
     });
   }
 
+  refreshCards() {
+    this.ApiService.getCards()
+       .subscribe(data => {
+         this.cardsInDB=data;
+        })   
+  }
 
   createCards(card : CardModel){
     this.cards.push(card);
-    console.log(card);
-    return this.cards;
+    this.ApiService.addCard(card)
+    .subscribe(data => {
+      this.card=data;
+    })    
   }
-
-
 }
